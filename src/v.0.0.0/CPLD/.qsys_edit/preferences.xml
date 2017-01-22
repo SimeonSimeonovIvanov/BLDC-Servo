@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="79" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="245" />
+   <clocksource preferredWidth="245" />
+   <frequency preferredWidth="226" />
+  </columns>
+ </clocktable>
+ <window width="1024" height="738" x="0" y="0" />
+ <library
+   expandedCategories="Library,Library/Clock and Reset,Library/Embedded Processors,Project" />
+ <hdlexample language="VHDL" />
+</preferences>

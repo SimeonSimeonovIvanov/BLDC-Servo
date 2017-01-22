@@ -1,0 +1,116 @@
+m255
+K3
+13
+cModel Technology
+dE:\Developments\Elektronika\Programiruemi Logiki\Projects\SPI\test00
+Espi_slave
+Z0 w1433438754
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dE:\Developments\Elektronika\Programiruemi Logiki\Projects\SPI and ENCODER\test_00\simulation\modelsim
+Z5 8E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/spi_slave.vhd
+Z6 FE:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/spi_slave.vhd
+l0
+L5
+VJC?bL^YETDEL]TY8J=V781
+!s100 Cg3G[9Pj[OOhg[E>d00n20
+Z7 OV;C;10.1d;51
+32
+!i10b 1
+Z8 !s108 1433443039.687000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/spi_slave.vhd|
+Z10 !s107 E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/spi_slave.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+Abehv
+R1
+R2
+R3
+DEx4 work 9 spi_slave 0 22 JC?bL^YETDEL]TY8J=V781
+l32
+L24
+V3365T1E7HDMU[ka7NGO``0
+!s100 zhVn@LKMU<8@JT9K;@]ln2
+R7
+32
+!i10b 1
+R8
+R9
+R10
+R11
+R12
+Espi_slave_tb
+Z13 w1430916848
+R2
+R3
+R4
+Z14 8E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI/test00/spi_slave_tb.vhd
+Z15 FE:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI/test00/spi_slave_tb.vhd
+l0
+L5
+V9KFfnKR_QQ61a]JdYk7>n2
+R7
+32
+Z16 !s108 1430916849.828000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI/test00/spi_slave_tb.vhd|
+Z18 !s107 E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI/test00/spi_slave_tb.vhd|
+R11
+R12
+!s100 A;6j>dWk1L[[gTXXL]WNJ2
+!i10b 1
+Abehv
+R2
+R3
+DEx4 work 12 spi_slave_tb 0 22 9KFfnKR_QQ61a]JdYk7>n2
+l56
+L8
+VgIU=<6__^HJQQ7C?jTZ=Y1
+R7
+32
+R16
+R17
+R18
+R11
+R12
+!s100 DILUm^JEfmX_edEZNZDV:2
+!i10b 1
+Ewheeldecoder
+Z19 w1430375488
+Z20 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z21 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+R2
+R3
+R4
+Z22 8E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/WheelDecoder.vhdl
+Z23 FE:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/WheelDecoder.vhdl
+l0
+L5
+VCYzSCa:EbS5I7c5hf4mNY1
+R7
+32
+Z24 !s108 1430916849.421000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/WheelDecoder.vhdl|
+Z26 !s107 E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/WheelDecoder.vhdl|
+R11
+R12
+!s100 gAGMl@EfB?5KAcgo4`AR[2
+!i10b 1
+Aarch
+R20
+R21
+R2
+R3
+DEx4 work 12 wheeldecoder 0 22 CYzSCa:EbS5I7c5hf4mNY1
+l37
+L20
+VO2]ee^F?R;ASAfZA:c^G=2
+R7
+32
+R24
+R25
+R26
+R11
+R12
+!s100 ;mO2Q@9T6;`PeS8N=[Ph_3
+!i10b 1

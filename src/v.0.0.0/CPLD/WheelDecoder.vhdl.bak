@@ -1,0 +1,118 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity WheelDecoder is
+	generic
+	(
+		CLK_FREQ		: in	integer
+	);
+	port
+	(
+		clk			: in	std_logic;
+		reset			: in	std_logic;
+		sensorA		: in	std_logic;
+		sensorB		: in	std_logic;
+		countOut		: out std_logic_vector( 15 downto 0 );
+		
+		test			: out std_logic
+	);
+end WheelDecoder;
+
+architecture Arch of WheelDecoder is
+
+	constant SHIFT_MAX: integer := CLK_FREQ / 8000;	-- 125us
+
+	signal shiftA		: std_logic_vector(3 downto 0);
+	signal shiftB		: std_logic_vector(3 downto 0);
+
+	signal voteA		: std_logic;
+	signal voteB		: std_logic;
+	signal voteA_d		: std_logic;
+	signal voteB_d		: std_logic;
+
+	signal rotLeft		: std_logic;
+	signal rotRight	: std_logic;
+
+	signal counter		: unsigned(15 downto 0);
+
+begin
+
+	countOut <= std_logic_vector(counter);
+
+	-- Generate a pulse for sampling the output signals from the sensors
+	Shifter : process( clk )
+		variable counter : integer range 0 to SHIFT_MAX-1;
+	begin
+		if ( clk'event and clk = '1' ) then -- rising_edge( clk ) ???
+			if ( reset = '1' ) then
+				counter	:= 0;
+				shiftA	<= ( others => sensorA );
+				shiftB	<= ( others => sensorB );
+			else
+				if ( counter = SHIFT_MAX - 1 ) then
+					counter	:= 0;
+					shiftA	<= shiftA( 2 downto 0 ) & sensorA;
+					shiftB	<= shiftB( 2 downto 0 ) & sensorB;
+				else
+					counter	:= counter + 1;
+				end if;
+			end if;
+		end if;
+	end process;
+
+	-- Input voters, to remove any glitches
+	voteA <= '1' when shiftA(3 downto 1)=b"111" or shiftA(3 downto 1)=b"011" or shiftA(3 downto 1)=b"101" or shiftA(3 downto 1)=b"110" else '0';
+	voteB <= '1' when shiftB(3 downto 1)=b"111" or shiftB(3 downto 1)=b"011" or shiftB(3 downto 1)=b"101" or shiftB(3 downto 1)=b"110" else '0';
+
+	Decoder : process ( clk )
+		variable code : std_logic_vector( 3 downto 0 );
+	begin
+		if ( clk'event and clk='1' ) then
+			rotLeft	<= '0';
+			rotRight	<= '0';
+			voteA_d	<= voteA;
+			voteB_d	<= voteB;
+
+			if ( reset = '1' ) then
+				counter <= ( others => '0' );
+			else
+				-- Create code from delayed and current sensor values
+				code := voteA_d & voteB_d & voteA & voteB;
+
+				case code is
+				--	when b"0000"	=> 						-- A > A
+					when b"0010"	=> rotRight <= '1';	-- A > B
+				--	when b"0011"	=> 						-- A > C
+					when b"0001"	=> rotLeft <= '1'; 	-- A > D
+
+					when b"1000"	=> rotLeft <= '1'; 	-- B > A
+				--	when b"1010"	=> 						-- B > B
+					when b"1011"	=> rotRight <= '1'; 	-- B > C
+				--	when b"1001"	=> 						-- B > D
+
+				--	when b"1100"	=> 						-- C > A
+					when b"1110"	=> rotLeft <= '1';	-- C > B
+				--	when b"1111"	=> 						-- C > C
+					when b"1101"	=> rotRight <= '1'; 	-- C > D
+
+					when b"0100"	=> rotRight <= '1'; 	-- D > A
+				--	when b"0110"	=> 						-- D > B
+					when b"0111"	=> rotLeft <= '1';	-- D > C
+				--	when b"0101"	=> 						-- D > D
+
+					when others		=> null;
+				end case;
+
+				if ( rotRight = '1' ) then
+					counter <= counter + 1;
+				elsif ( rotLeft = '1' ) then
+					counter <= counter - 1;
+				end if;
+
+				test <= counter( 0 );
+			end if;
+		end if;
+	end process;
+
+end Arch;

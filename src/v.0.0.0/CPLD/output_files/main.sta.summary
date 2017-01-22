@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'spi_slave_sck'
+Slack : -6.469
+TNS   : -215.378
+
+Type  : Setup 'sys_clk0'
+Slack : -5.788
+TNS   : -198.719
+
+Type  : Setup 'spi_slave:IC2|rx_bit_counter[0]'
+Slack : -5.438
+TNS   : -7.156
+
+Type  : Setup 'load_dacs'
+Slack : -0.184
+TNS   : -4.849
+
+Type  : Hold 'spi_slave:IC2|rx_bit_counter[0]'
+Slack : -8.852
+TNS   : -8.852
+
+Type  : Hold 'spi_slave_sck'
+Slack : -3.293
+TNS   : -44.519
+
+Type  : Hold 'load_dacs'
+Slack : 0.591
+TNS   : 0.000
+
+Type  : Hold 'sys_clk0'
+Slack : 1.652
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'load_dacs'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'spi_slave_sck'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'sys_clk0'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'spi_slave:IC2|rx_bit_counter[0]'
+Slack : 0.463
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,165 @@
+ -- Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, the Altera Quartus Prime License Agreement,
+ -- the Altera MegaCore Function License Agreement, or other 
+ -- applicable license agreement, including, without limitation, 
+ -- that your use is for the sole purpose of programming logic 
+ -- devices manufactured by Altera and sold by Altera or its 
+ -- authorized distributors.  Please refer to the applicable 
+ -- agreement for further details.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (2.5V/3.3V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1:       3.3V
+ --                  Bank 2:       3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+CHIP  "main"  ASSIGNED TO AN: EPM240T100C5
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND*                         : 1         :        :                   :         : 2         :                
+dac2[9]                      : 2         : output : 3.3-V LVCMOS      :         : 1         : Y              
+spi_slave_ss                 : 3         : input  : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[8]                      : 4         : output : 3.3-V LVCMOS      :         : 1         : Y              
+load_dacs                    : 5         : input  : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[7]                      : 6         : output : 3.3-V LVCMOS      :         : 1         : Y              
+encoder1_reset_in            : 7         : input  : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[6]                      : 8         : output : 3.3-V LVCMOS      :         : 1         : Y              
+VCCIO1                       : 9         : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 10        : gnd    :                   :         :           :                
+GNDINT                       : 11        : gnd    :                   :         :           :                
+sys_clk0                     : 12        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+VCCINT                       : 13        : power  :                   : 2.5V/3.3V :           :                
+GND*                         : 14        :        :                   :         : 1         :                
+GND*                         : 15        :        :                   :         : 1         :                
+dac2[5]                      : 16        : output : 3.3-V LVCMOS      :         : 1         : Y              
+GND*                         : 17        :        :                   :         : 1         :                
+dac2[4]                      : 18        : output : 3.3-V LVCMOS      :         : 1         : Y              
+spi_slave_mosi               : 19        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[3]                      : 20        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[2]                      : 21        : output : 3.3-V LVCMOS      :         : 1         : Y              
+TMS                          : 22        : input  :                   :         : 1         :                
+TDI                          : 23        : input  :                   :         : 1         :                
+TCK                          : 24        : input  :                   :         : 1         :                
+TDO                          : 25        : output :                   :         : 1         :                
+spi_slave_miso               : 26        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[1]                      : 27        : output : 3.3-V LVCMOS      :         : 1         : Y              
+spi_slave_sck                : 28        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+dac2[0]                      : 29        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[9]                      : 30        : output : 3.3-V LVCMOS      :         : 1         : Y              
+VCCIO1                       : 31        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 32        : gnd    :                   :         :           :                
+dac1[9]                      : 33        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[8]                      : 34        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[8]                      : 35        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[7]                      : 36        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[7]                      : 37        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[6]                      : 38        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[6]                      : 39        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[5]                      : 40        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[5]                      : 41        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[4]                      : 42        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[4]                      : 43        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[3]                      : 44        : output : 3.3-V LVCMOS      :         : 1         : Y              
+VCCIO1                       : 45        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 46        : gnd    :                   :         :           :                
+dac1[3]                      : 47        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[2]                      : 48        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[2]                      : 49        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[1]                      : 50        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac1[1]                      : 51        : output : 3.3-V LVCMOS      :         : 1         : Y              
+dac0[0]                      : 52        : output : 3.3-V LVCMOS      :         : 2         : Y              
+dac1[0]                      : 53        : output : 3.3-V LVCMOS      :         : 2         : Y              
+GND*                         : 54        :        :                   :         : 2         :                
+GND*                         : 55        :        :                   :         : 2         :                
+GND*                         : 56        :        :                   :         : 2         :                
+GND*                         : 57        :        :                   :         : 2         :                
+GND*                         : 58        :        :                   :         : 2         :                
+VCCIO2                       : 59        : power  :                   : 3.3V    : 2         :                
+GNDIO                        : 60        : gnd    :                   :         :           :                
+encoder1_w_in                : 61        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+GND*                         : 62        :        :                   :         : 2         :                
+VCCINT                       : 63        : power  :                   : 2.5V/3.3V :           :                
+GND*                         : 64        :        :                   :         : 2         :                
+GNDINT                       : 65        : gnd    :                   :         :           :                
+encoder1_w_out               : 66        : output : 3.3-V LVCMOS      :         : 2         : Y              
+encoder1_v_in                : 67        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+encoder1_v_out               : 68        : output : 3.3-V LVCMOS      :         : 2         : Y              
+encoder1_u_in                : 69        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+encoder1_u_out               : 70        : output : 3.3-V LVCMOS      :         : 2         : Y              
+encoder1_a                   : 71        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+GND*                         : 72        :        :                   :         : 2         :                
+encoder1_b                   : 73        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+GND*                         : 74        :        :                   :         : 2         :                
+encoder1_z                   : 75        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+GND*                         : 76        :        :                   :         : 2         :                
+led1                         : 77        : output : 3.3-V LVCMOS      :         : 2         : Y              
+GND*                         : 78        :        :                   :         : 2         :                
+GNDIO                        : 79        : gnd    :                   :         :           :                
+VCCIO2                       : 80        : power  :                   : 3.3V    : 2         :                
+GND*                         : 81        :        :                   :         : 2         :                
+GND*                         : 82        :        :                   :         : 2         :                
+GND*                         : 83        :        :                   :         : 2         :                
+GND*                         : 84        :        :                   :         : 2         :                
+GND*                         : 85        :        :                   :         : 2         :                
+GND*                         : 86        :        :                   :         : 2         :                
+GND*                         : 87        :        :                   :         : 2         :                
+GND*                         : 88        :        :                   :         : 2         :                
+GND*                         : 89        :        :                   :         : 2         :                
+GND*                         : 90        :        :                   :         : 2         :                
+GND*                         : 91        :        :                   :         : 2         :                
+GND*                         : 92        :        :                   :         : 2         :                
+GNDIO                        : 93        : gnd    :                   :         :           :                
+VCCIO2                       : 94        : power  :                   : 3.3V    : 2         :                
+GND*                         : 95        :        :                   :         : 2         :                
+GND*                         : 96        :        :                   :         : 2         :                
+GND*                         : 97        :        :                   :         : 2         :                
+GND*                         : 98        :        :                   :         : 2         :                
+GND*                         : 99        :        :                   :         : 2         :                
+GND*                         : 100       :        :                   :         : 2         :                

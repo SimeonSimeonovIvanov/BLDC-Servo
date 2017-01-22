@@ -1,0 +1,158 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/simulation/modelsim
+Emain
+Z1 w1467798557
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd
+Z5 FD:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd
+l0
+L4
+VG39UYnSh3dR:_a40QYzH[2
+!s100 `Pc91PNo<8^aCZo?25eQb2
+Z6 OV;C;10.4d;61
+32
+Z7 !s110 1467798717
+!i10b 1
+Z8 !s108 1467798717.000000
+Z9 !s90 -reportprogress|300|-work|work|D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd|
+Z10 !s107 D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd|
+!i113 1
+Z11 o-work work
+Z12 tExplicit 1
+Abehv
+R2
+R3
+Z13 DEx4 work 4 main 0 22 G39UYnSh3dR:_a40QYzH[2
+l82
+L35
+Z14 VnffXFlQcRoWMWke[81d^=3
+Z15 !s100 fDI:D_d^UY::OmAibj9>h1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Astructure
+DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+DPx5 maxii 15 maxii_atom_pack 0 22 e8FOS8[e<aGhTI9R_8oFd3
+DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+DPx5 maxii 16 maxii_components 0 22 4i:mP0EH99i7XJ5dljaSC1
+R2
+R3
+DEx4 work 4 main 0 22 CohQ;NP@LXiaXU181gflf1
+l353
+L63
+VY3mH`N9KPiZo`=g83EAR40
+!s100 nkM`2`fV07?oIKImk@3cn3
+R6
+32
+!s110 1467798695
+!i10b 1
+!s108 1467798695.000000
+!s90 -reportprogress|30|-work|work|D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/simulation/modelsim/main.vho|
+!s107 D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/simulation/modelsim/main.vho|
+!i113 1
+R11
+R12
+FD:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/simulation/modelsim/main.vho
+w1467798576
+8D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/simulation/modelsim/main.vho
+Espi_slave
+Z16 w1433712924
+Z17 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z18 8D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd
+Z19 FD:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd
+l0
+L5
+V62X?TKcfidbmN4nEA`fc71
+!s100 l9DcMl<n]PfVW`Yd47QX[1
+R6
+32
+Z20 !s110 1467798713
+!i10b 1
+Z21 !s108 1467798713.000000
+Z22 !s90 -reportprogress|300|-work|work|D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd|
+Z23 !s107 D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd|
+!i113 1
+R11
+R12
+Abehv
+R17
+R2
+R3
+DEx4 work 9 spi_slave 0 22 62X?TKcfidbmN4nEA`fc71
+l32
+L24
+VooC@R2OQn8gW3UgLlbUYk1
+!s100 7B0SnKn<h=kXdWbHDdIlM3
+R6
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R11
+R12
+Ewheeldecoder
+Z24 w1459062202
+Z25 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R2
+R3
+Z26 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R0
+Z27 8D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl
+Z28 FD:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl
+l0
+L6
+V<]a^m@ASj=Sk@`nfF^2ZS2
+!s100 0>XmnKkSaTB;OfE3T:PMi3
+R6
+32
+Z29 !s110 1467798715
+!i10b 1
+Z30 !s108 1467798715.000000
+Z31 !s90 -reportprogress|300|-work|work|D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl|
+Z32 !s107 D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl|
+!i113 1
+R11
+R12
+Aarch
+R25
+R2
+R3
+R26
+DEx4 work 12 wheeldecoder 0 22 <]a^m@ASj=Sk@`nfF^2ZS2
+l38
+L21
+V0T?:^=z@dLcz<hQzQz`;E2
+!s100 z>1cnfRIdi=2[nTP61>^i0
+R6
+32
+R29
+!i10b 1
+R30
+R31
+R32
+!i113 1
+R11
+R12

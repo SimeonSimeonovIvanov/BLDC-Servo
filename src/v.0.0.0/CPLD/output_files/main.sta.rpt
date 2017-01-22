@@ -1,0 +1,1017 @@
+TimeQuest Timing Analyzer report for main
+Wed Jul 06 12:49:34 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'spi_slave_sck'
+ 12. Setup: 'sys_clk0'
+ 13. Setup: 'spi_slave:IC2|rx_bit_counter[0]'
+ 14. Setup: 'load_dacs'
+ 15. Hold: 'spi_slave:IC2|rx_bit_counter[0]'
+ 16. Hold: 'spi_slave_sck'
+ 17. Hold: 'load_dacs'
+ 18. Hold: 'sys_clk0'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Report TCCS
+ 22. Report RSKM
+ 23. Unconstrained Paths Summary
+ 24. Clock Status Summary
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; main                                                ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                           ;
++---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
+; Clock Name                      ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                             ;
++---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
+; load_dacs                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { load_dacs }                       ;
+; spi_slave:IC2|rx_bit_counter[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { spi_slave:IC2|rx_bit_counter[0] } ;
+; spi_slave_sck                   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { spi_slave_sck }                   ;
+; sys_clk0                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { sys_clk0 }                        ;
++---------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                             ;
++------------+-----------------+---------------------------------+-------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                      ; Note                    ;
++------------+-----------------+---------------------------------+-------------------------+
+; INF MHz    ; 56.48 MHz       ; spi_slave:IC2|rx_bit_counter[0] ; limit due to hold check ;
+; 133.89 MHz ; 133.89 MHz      ; spi_slave_sck                   ;                         ;
+; 147.32 MHz ; 147.32 MHz      ; sys_clk0                        ;                         ;
++------------+-----------------+---------------------------------+-------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------------------------+
+; Setup Summary                                            ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; spi_slave_sck                   ; -6.469 ; -215.378      ;
+; sys_clk0                        ; -5.788 ; -198.719      ;
+; spi_slave:IC2|rx_bit_counter[0] ; -5.438 ; -7.156        ;
+; load_dacs                       ; -0.184 ; -4.849        ;
++---------------------------------+--------+---------------+
+
+
++----------------------------------------------------------+
+; Hold Summary                                             ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; spi_slave:IC2|rx_bit_counter[0] ; -8.852 ; -8.852        ;
+; spi_slave_sck                   ; -3.293 ; -44.519       ;
+; load_dacs                       ; 0.591  ; 0.000         ;
+; sys_clk0                        ; 1.652  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++----------------------------------------------------------+
+; Minimum Pulse Width Summary                              ;
++---------------------------------+--------+---------------+
+; Clock                           ; Slack  ; End Point TNS ;
++---------------------------------+--------+---------------+
+; load_dacs                       ; -2.289 ; -2.289        ;
+; spi_slave_sck                   ; -2.289 ; -2.289        ;
+; sys_clk0                        ; -2.289 ; -2.289        ;
+; spi_slave:IC2|rx_bit_counter[0] ; 0.463  ; 0.000         ;
++---------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'spi_slave_sck'                                                                                                                                                         ;
++--------+------------------------------------------+---------------------------------+---------------------------------+---------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                         ; Launch Clock                    ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+---------------------------------+---------------------------------+---------------+--------------+------------+------------+
+; -6.469 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[38]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 7.136      ;
+; -6.464 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[6]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 7.131      ;
+; -6.388 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 7.055      ;
+; -6.377 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 7.044      ;
+; -6.373 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 7.040      ;
+; -6.335 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[0]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 7.002      ;
+; -6.312 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[1]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.979      ;
+; -6.254 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[36]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.921      ;
+; -6.159 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[2]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.826      ;
+; -5.975 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.642      ;
+; -5.964 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.631      ;
+; -5.960 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.627      ;
+; -5.917 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[7]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.584      ;
+; -5.912 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[33]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.579      ;
+; -5.879 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[7]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.546      ;
+; -5.843 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.510      ;
+; -5.828 ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.500        ; -1.108     ; 4.887      ;
+; -5.828 ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.500        ; -1.108     ; 4.887      ;
+; -5.828 ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.500        ; -1.108     ; 4.887      ;
+; -5.828 ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.500        ; -1.108     ; 4.887      ;
+; -5.828 ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.500        ; -1.108     ; 4.887      ;
+; -5.817 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[32]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.484      ;
+; -5.694 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[3]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.361      ;
+; -5.689 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[5]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.356      ;
+; -5.682 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[38]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.349      ;
+; -5.681 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[33]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.348      ;
+; -5.677 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[6]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.344      ;
+; -5.657 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.324      ;
+; -5.647 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[7]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.314      ;
+; -5.646 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[7]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.313      ;
+; -5.628 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[31]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.295      ;
+; -5.627 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[30]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.294      ;
+; -5.619 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.286      ;
+; -5.619 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.286      ;
+; -5.619 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.286      ;
+; -5.619 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.286      ;
+; -5.619 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.286      ;
+; -5.605 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[33]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.272      ;
+; -5.600 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[46]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.267      ;
+; -5.581 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.248      ;
+; -5.581 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.248      ;
+; -5.581 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.248      ;
+; -5.581 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.248      ;
+; -5.581 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.248      ;
+; -5.490 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.157      ;
+; -5.488 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.155      ;
+; -5.487 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.154      ;
+; -5.479 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.146      ;
+; -5.478 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[34]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.145      ;
+; -5.475 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.142      ;
+; -5.472 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.139      ;
+; -5.472 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.139      ;
+; -5.472 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.139      ;
+; -5.472 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.139      ;
+; -5.472 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.139      ;
+; -5.456 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.123      ;
+; -5.449 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.116      ;
+; -5.434 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[0]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.101      ;
+; -5.430 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.097      ;
+; -5.428 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[18]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.095      ;
+; -5.370 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[0]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.037      ;
+; -5.370 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[30]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.037      ;
+; -5.369 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[1]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.036      ;
+; -5.359 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[18]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.026      ;
+; -5.353 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[36]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.020      ;
+; -5.353 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[38]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.020      ;
+; -5.348 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[6]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 6.015      ;
+; -5.309 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[4]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.976      ;
+; -5.290 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[35]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.957      ;
+; -5.286 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.953      ;
+; -5.270 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[31]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.937      ;
+; -5.269 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[30]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.936      ;
+; -5.257 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.924      ;
+; -5.242 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[46]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.909      ;
+; -5.229 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[16]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.896      ;
+; -5.227 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[18]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.894      ;
+; -5.217 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.884      ;
+; -5.216 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.883      ;
+; -5.195 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[14]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.862      ;
+; -5.181 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.848      ;
+; -5.169 ; spi_slave:IC2|rx_bit_counter[3]          ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.836      ;
+; -5.149 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.816      ;
+; -5.112 ; spi_slave:IC2|rx_bit_counter[2]          ; spi_slave:IC2|reg_dacs[2]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.779      ;
+; -5.092 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[0]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.759      ;
+; -5.091 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[1]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.758      ;
+; -5.090 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.757      ;
+; -5.086 ; spi_slave:IC2|rx_bit_counter[1]          ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.753      ;
+; -5.057 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[18]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.724      ;
+; -5.029 ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.500        ; -1.108     ; 4.088      ;
+; -5.028 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[16]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.695      ;
+; -5.023 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.690      ;
+; -4.988 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.655      ;
+; -4.988 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.655      ;
+; -4.988 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.655      ;
+; -4.988 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.655      ;
+; -4.988 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.655      ;
+; -4.968 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.635      ;
+; -4.949 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[1]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.616      ;
+; -4.945 ; spi_slave:IC2|rx_bit_counter[5]          ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.612      ;
+; -4.916 ; spi_slave:IC2|rx_bit_counter[4]          ; spi_slave:IC2|reg_dacs[32]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 1.000        ; 0.000      ; 5.583      ;
++--------+------------------------------------------+---------------------------------+---------------------------------+---------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'sys_clk0'                                                                                                                          ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.788 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 6.455      ;
+; -5.788 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 6.455      ;
+; -5.788 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 6.455      ;
+; -5.788 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 6.455      ;
+; -5.788 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 6.455      ;
+; -5.775 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 6.442      ;
+; -5.322 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.989      ;
+; -5.322 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.989      ;
+; -5.322 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.989      ;
+; -5.322 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.989      ;
+; -5.322 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.989      ;
+; -5.309 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.976      ;
+; -5.193 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[20] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.860      ;
+; -5.193 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[18] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.860      ;
+; -5.193 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[19] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.860      ;
+; -5.193 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[16] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.860      ;
+; -5.193 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[17] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.860      ;
+; -5.182 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.849      ;
+; -5.182 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.849      ;
+; -5.182 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.849      ;
+; -5.182 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.849      ;
+; -5.182 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.849      ;
+; -5.180 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[21] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.847      ;
+; -5.180 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[22] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.847      ;
+; -5.180 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[23] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.847      ;
+; -5.180 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[25] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.847      ;
+; -5.180 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[24] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.847      ;
+; -5.169 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.836      ;
+; -5.083 ; WheelDecoder:IC1|counter[16] ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.750      ;
+; -5.083 ; WheelDecoder:IC1|counter[16] ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.750      ;
+; -5.083 ; WheelDecoder:IC1|counter[16] ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.750      ;
+; -5.083 ; WheelDecoder:IC1|counter[16] ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.750      ;
+; -5.083 ; WheelDecoder:IC1|counter[16] ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.750      ;
+; -5.071 ; WheelDecoder:IC1|counter[2]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.738      ;
+; -5.071 ; WheelDecoder:IC1|counter[2]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.738      ;
+; -5.071 ; WheelDecoder:IC1|counter[2]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.738      ;
+; -5.071 ; WheelDecoder:IC1|counter[2]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.738      ;
+; -5.071 ; WheelDecoder:IC1|counter[2]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.738      ;
+; -5.070 ; WheelDecoder:IC1|counter[16] ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.737      ;
+; -5.058 ; WheelDecoder:IC1|counter[2]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.725      ;
+; -4.874 ; WheelDecoder:IC1|counter[0]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.541      ;
+; -4.874 ; WheelDecoder:IC1|counter[0]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.541      ;
+; -4.874 ; WheelDecoder:IC1|counter[0]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.541      ;
+; -4.874 ; WheelDecoder:IC1|counter[0]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.541      ;
+; -4.874 ; WheelDecoder:IC1|counter[0]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.541      ;
+; -4.861 ; WheelDecoder:IC1|counter[0]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.528      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[11] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[13] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[15] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[9]  ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[6]  ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[7]  ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[12] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[10] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[14] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.842 ; WheelDecoder:IC1|rotRight    ; WheelDecoder:IC1|counter[8]  ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.509      ;
+; -4.805 ; WheelDecoder:IC1|counter[4]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.472      ;
+; -4.805 ; WheelDecoder:IC1|counter[4]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.472      ;
+; -4.805 ; WheelDecoder:IC1|counter[4]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.472      ;
+; -4.805 ; WheelDecoder:IC1|counter[4]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.472      ;
+; -4.805 ; WheelDecoder:IC1|counter[4]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.472      ;
+; -4.792 ; WheelDecoder:IC1|counter[4]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.459      ;
+; -4.727 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[20] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.394      ;
+; -4.727 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[18] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.394      ;
+; -4.727 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[19] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.394      ;
+; -4.727 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[16] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.394      ;
+; -4.727 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[17] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.394      ;
+; -4.714 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[21] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.381      ;
+; -4.714 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[22] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.381      ;
+; -4.714 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[23] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.381      ;
+; -4.714 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[25] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.381      ;
+; -4.714 ; WheelDecoder:IC1|counter[3]  ; WheelDecoder:IC1|counter[24] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.381      ;
+; -4.587 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[20] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.254      ;
+; -4.587 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[18] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.254      ;
+; -4.587 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[19] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.254      ;
+; -4.587 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[16] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.254      ;
+; -4.587 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[17] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.254      ;
+; -4.574 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[21] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.241      ;
+; -4.574 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[22] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.241      ;
+; -4.574 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[23] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.241      ;
+; -4.574 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[25] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.241      ;
+; -4.574 ; WheelDecoder:IC1|counter[1]  ; WheelDecoder:IC1|counter[24] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.241      ;
+; -4.568 ; WheelDecoder:IC1|counter[11] ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; WheelDecoder:IC1|counter[11] ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; WheelDecoder:IC1|counter[11] ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; WheelDecoder:IC1|counter[11] ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.235      ;
+; -4.568 ; WheelDecoder:IC1|counter[11] ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.235      ;
+; -4.561 ; WheelDecoder:IC1|counter[5]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.228      ;
+; -4.561 ; WheelDecoder:IC1|counter[5]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.228      ;
+; -4.561 ; WheelDecoder:IC1|counter[5]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.228      ;
+; -4.561 ; WheelDecoder:IC1|counter[5]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.228      ;
+; -4.561 ; WheelDecoder:IC1|counter[5]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.228      ;
+; -4.556 ; WheelDecoder:IC1|counter[6]  ; WheelDecoder:IC1|counter[29] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.223      ;
+; -4.556 ; WheelDecoder:IC1|counter[6]  ; WheelDecoder:IC1|counter[28] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.223      ;
+; -4.556 ; WheelDecoder:IC1|counter[6]  ; WheelDecoder:IC1|counter[27] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.223      ;
+; -4.556 ; WheelDecoder:IC1|counter[6]  ; WheelDecoder:IC1|counter[26] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.223      ;
+; -4.556 ; WheelDecoder:IC1|counter[6]  ; WheelDecoder:IC1|counter[30] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.223      ;
+; -4.555 ; WheelDecoder:IC1|counter[11] ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.222      ;
+; -4.548 ; WheelDecoder:IC1|counter[5]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.215      ;
+; -4.543 ; WheelDecoder:IC1|counter[6]  ; WheelDecoder:IC1|counter[31] ; sys_clk0     ; sys_clk0    ; 1.000        ; 0.000      ; 5.210      ;
++--------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'spi_slave:IC2|rx_bit_counter[0]'                                                                                                                                                         ;
++--------+---------------------------------+------------------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                                  ; Launch Clock                    ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+------------------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; -5.438 ; spi_slave:IC2|rx_buf[6]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 5.204      ;
+; -5.294 ; spi_slave:IC2|rx_buf[3]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 5.060      ;
+; -5.253 ; spi_slave:IC2|rx_buf[0]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 5.019      ;
+; -4.951 ; spi_slave:IC2|rx_buf[5]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 4.717      ;
+; -4.811 ; spi_slave:IC2|rx_buf[2]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 4.577      ;
+; -4.739 ; spi_slave:IC2|rx_buf[7]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 4.505      ;
+; -4.234 ; spi_slave:IC2|rx_buf[1]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 4.000      ;
+; -3.729 ; spi_slave:IC2|rx_buf[4]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 1.108      ; 3.495      ;
+; -1.718 ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 9.283      ; 9.476      ;
+; -1.562 ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 9.283      ; 9.320      ;
+; -1.340 ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 9.283      ; 9.098      ;
+; 1.565  ; WheelDecoder:IC1|counter[31]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 8.554      ;
+; 1.657  ; WheelDecoder:IC1|counter[6]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 8.462      ;
+; 1.699  ; WheelDecoder:IC1|counter[2]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 8.420      ;
+; 1.777  ; WheelDecoder:IC1|counter[15]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 8.342      ;
+; 1.847  ; WheelDecoder:IC1|counter[23]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 8.272      ;
+; 2.050  ; WheelDecoder:IC1|counter[5]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 8.069      ;
+; 2.226  ; WheelDecoder:IC1|counter[30]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.893      ;
+; 2.384  ; WheelDecoder:IC1|counter[18]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.735      ;
+; 2.417  ; WheelDecoder:IC1|counter[3]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.702      ;
+; 2.452  ; WheelDecoder:IC1|counter[10]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.667      ;
+; 2.491  ; WheelDecoder:IC1|counter[12]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.628      ;
+; 2.533  ; WheelDecoder:IC1|counter[22]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.586      ;
+; 2.549  ; WheelDecoder:IC1|counter[7]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.570      ;
+; 2.582  ; WheelDecoder:IC1|counter[14]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.537      ;
+; 2.589  ; WheelDecoder:IC1|counter[25]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.530      ;
+; 2.649  ; WheelDecoder:IC1|counter[29]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.470      ;
+; 2.673  ; WheelDecoder:IC1|counter[4]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.446      ;
+; 2.820  ; WheelDecoder:IC1|counter[13]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.299      ;
+; 2.956  ; WheelDecoder:IC1|counter[19]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.163      ;
+; 2.996  ; WheelDecoder:IC1|counter[0]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.123      ;
+; 3.061  ; WheelDecoder:IC1|counter[28]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 7.058      ;
+; 3.239  ; WheelDecoder:IC1|counter[1]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.880      ;
+; 3.267  ; WheelDecoder:IC1|counter[21]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.852      ;
+; 3.285  ; WheelDecoder:IC1|counter[27]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.834      ;
+; 3.319  ; WheelDecoder:IC1|counter[16]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.800      ;
+; 3.343  ; WheelDecoder:IC1|counter[20]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.776      ;
+; 3.449  ; WheelDecoder:IC1|counter[9]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.670      ;
+; 3.473  ; WheelDecoder:IC1|counter[26]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.646      ;
+; 3.592  ; WheelDecoder:IC1|counter[11]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.527      ;
+; 3.765  ; WheelDecoder:IC1|counter[17]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.354      ;
+; 3.894  ; WheelDecoder:IC1|counter[8]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.225      ;
+; 3.952  ; WheelDecoder:IC1|counter[24]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 11.644     ; 6.167      ;
+; 4.015  ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 9.283      ; 3.743      ;
+; 4.852  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|miso$latch                 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; 0.500        ; 14.992     ; 8.991      ;
+; 5.352  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|miso$latch                 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; 1.000        ; 14.992     ; 8.991      ;
++--------+---------------------------------+------------------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'load_dacs'                                                                                                             ;
++--------+---------------------------------+--------------+---------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node      ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+--------------+---------------+-------------+--------------+------------+------------+
+; -0.184 ; spi_slave:IC2|reg_dacs[21]~reg0 ; dac1[2]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.637      ;
+; -0.181 ; spi_slave:IC2|reg_dacs[19]~reg0 ; dac1[4]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.634      ;
+; -0.179 ; spi_slave:IC2|reg_dacs[46]~reg0 ; dac2[9]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.632      ;
+; -0.177 ; spi_slave:IC2|reg_dacs[17]~reg0 ; dac1[6]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.630      ;
+; -0.173 ; spi_slave:IC2|reg_dacs[30]~reg0 ; dac1[9]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.626      ;
+; -0.169 ; spi_slave:IC2|reg_dacs[4]~reg0  ; dac0[3]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.622      ;
+; -0.169 ; spi_slave:IC2|reg_dacs[2]~reg0  ; dac0[5]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.622      ;
+; -0.166 ; spi_slave:IC2|reg_dacs[1]~reg0  ; dac0[6]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.619      ;
+; -0.165 ; spi_slave:IC2|reg_dacs[32]~reg0 ; dac2[7]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.618      ;
+; -0.164 ; spi_slave:IC2|reg_dacs[5]~reg0  ; dac0[2]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.617      ;
+; -0.164 ; spi_slave:IC2|reg_dacs[0]~reg0  ; dac0[7]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.617      ;
+; -0.163 ; spi_slave:IC2|reg_dacs[34]~reg0 ; dac2[5]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.616      ;
+; -0.162 ; spi_slave:IC2|reg_dacs[36]~reg0 ; dac2[3]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.615      ;
+; -0.160 ; spi_slave:IC2|reg_dacs[7]~reg0  ; dac0[0]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.613      ;
+; -0.160 ; spi_slave:IC2|reg_dacs[31]~reg0 ; dac1[8]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.613      ;
+; -0.159 ; spi_slave:IC2|reg_dacs[37]~reg0 ; dac2[2]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.612      ;
+; -0.159 ; spi_slave:IC2|reg_dacs[47]~reg0 ; dac2[8]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.612      ;
+; -0.158 ; spi_slave:IC2|reg_dacs[20]~reg0 ; dac1[3]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.611      ;
+; -0.158 ; spi_slave:IC2|reg_dacs[18]~reg0 ; dac1[5]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.611      ;
+; -0.157 ; spi_slave:IC2|reg_dacs[15]~reg0 ; dac0[8]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.610      ;
+; -0.157 ; spi_slave:IC2|reg_dacs[14]~reg0 ; dac0[9]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.610      ;
+; -0.157 ; spi_slave:IC2|reg_dacs[38]~reg0 ; dac2[1]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.610      ;
+; -0.155 ; spi_slave:IC2|reg_dacs[3]~reg0  ; dac0[4]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.608      ;
+; -0.154 ; spi_slave:IC2|reg_dacs[16]~reg0 ; dac1[7]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.607      ;
+; -0.154 ; spi_slave:IC2|reg_dacs[39]~reg0 ; dac2[0]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.607      ;
+; -0.154 ; spi_slave:IC2|reg_dacs[33]~reg0 ; dac2[6]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.607      ;
+; -0.153 ; spi_slave:IC2|reg_dacs[6]~reg0  ; dac0[1]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.606      ;
+; -0.148 ; spi_slave:IC2|reg_dacs[35]~reg0 ; dac2[4]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.601      ;
+; -0.145 ; spi_slave:IC2|reg_dacs[23]~reg0 ; dac1[0]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.598      ;
+; -0.145 ; spi_slave:IC2|reg_dacs[22]~reg0 ; dac1[1]~reg0 ; spi_slave_sck ; load_dacs   ; 1.000        ; 0.786      ; 1.598      ;
++--------+---------------------------------+--------------+---------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'spi_slave:IC2|rx_bit_counter[0]'                                                                                                                                                          ;
++--------+---------------------------------+------------------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                                  ; Launch Clock                    ; Latch Clock                     ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+------------------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+; -8.852 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|miso$latch                 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; 0.000        ; 15.029     ; 6.553      ;
+; -8.352 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|miso$latch                 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 15.029     ; 6.553      ;
+; -5.077 ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 9.320      ; 3.743      ;
+; -5.014 ; WheelDecoder:IC1|counter[24]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.167      ;
+; -4.956 ; WheelDecoder:IC1|counter[8]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.225      ;
+; -4.932 ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 9.320      ; 3.888      ;
+; -4.827 ; WheelDecoder:IC1|counter[17]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.354      ;
+; -4.654 ; WheelDecoder:IC1|counter[11]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.527      ;
+; -4.535 ; WheelDecoder:IC1|counter[26]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.646      ;
+; -4.511 ; WheelDecoder:IC1|counter[9]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.670      ;
+; -4.405 ; WheelDecoder:IC1|counter[20]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.776      ;
+; -4.381 ; WheelDecoder:IC1|counter[16]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.800      ;
+; -4.347 ; WheelDecoder:IC1|counter[27]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.834      ;
+; -4.329 ; WheelDecoder:IC1|counter[21]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.852      ;
+; -4.301 ; WheelDecoder:IC1|counter[1]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 6.880      ;
+; -4.123 ; WheelDecoder:IC1|counter[28]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.058      ;
+; -4.058 ; WheelDecoder:IC1|counter[0]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.123      ;
+; -4.018 ; WheelDecoder:IC1|counter[19]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.163      ;
+; -3.882 ; WheelDecoder:IC1|counter[13]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.299      ;
+; -3.735 ; WheelDecoder:IC1|counter[4]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.446      ;
+; -3.711 ; WheelDecoder:IC1|counter[29]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.470      ;
+; -3.651 ; WheelDecoder:IC1|counter[25]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.530      ;
+; -3.644 ; WheelDecoder:IC1|counter[14]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.537      ;
+; -3.611 ; WheelDecoder:IC1|counter[7]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.570      ;
+; -3.595 ; WheelDecoder:IC1|counter[22]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.586      ;
+; -3.553 ; WheelDecoder:IC1|counter[12]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.628      ;
+; -3.514 ; WheelDecoder:IC1|counter[10]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.667      ;
+; -3.479 ; WheelDecoder:IC1|counter[3]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.702      ;
+; -3.446 ; WheelDecoder:IC1|counter[18]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.735      ;
+; -3.288 ; WheelDecoder:IC1|counter[30]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 7.893      ;
+; -3.112 ; WheelDecoder:IC1|counter[5]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 8.069      ;
+; -3.041 ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 9.320      ; 5.779      ;
+; -2.909 ; WheelDecoder:IC1|counter[23]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 8.272      ;
+; -2.904 ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave:IC2|miso$latch                 ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 9.320      ; 5.916      ;
+; -2.839 ; WheelDecoder:IC1|counter[15]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 8.342      ;
+; -2.761 ; WheelDecoder:IC1|counter[2]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 8.420      ;
+; -2.719 ; WheelDecoder:IC1|counter[6]     ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 8.462      ;
+; -2.627 ; WheelDecoder:IC1|counter[31]    ; spi_slave:IC2|miso$latch                 ; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 11.681     ; 8.554      ;
+; 2.887  ; spi_slave:IC2|rx_buf[4]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 3.495      ;
+; 3.392  ; spi_slave:IC2|rx_buf[1]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 4.000      ;
+; 3.897  ; spi_slave:IC2|rx_buf[7]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 4.505      ;
+; 3.969  ; spi_slave:IC2|rx_buf[2]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 4.577      ;
+; 4.109  ; spi_slave:IC2|rx_buf[5]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 4.717      ;
+; 4.411  ; spi_slave:IC2|rx_buf[0]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 5.019      ;
+; 4.452  ; spi_slave:IC2|rx_buf[3]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 5.060      ;
+; 4.596  ; spi_slave:IC2|rx_buf[6]         ; spi_slave:IC2|rx_bit_counter_up_value[4] ; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; -0.500       ; 1.108      ; 5.204      ;
++--------+---------------------------------+------------------------------------------+---------------------------------+---------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'spi_slave_sck'                                                                                                                                                 ;
++--------+---------------------------------+---------------------------------+---------------------------------+---------------+--------------+------------+------------+
+; Slack  ; From Node                       ; To Node                         ; Launch Clock                    ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------+---------------------------------+---------------------------------+---------------+--------------+------------+------------+
+; -3.293 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 3.013      ;
+; -2.844 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 3.462      ;
+; -2.793 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 3.013      ;
+; -2.344 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 3.462      ;
+; -2.197 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[35]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.109      ;
+; -2.116 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[14]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.190      ;
+; -2.062 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[34]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.244      ;
+; -2.012 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.294      ;
+; -1.901 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.405      ;
+; -1.790 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.516      ;
+; -1.711 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[46]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.595      ;
+; -1.697 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[35]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.109      ;
+; -1.679 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.627      ;
+; -1.638 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[47]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.668      ;
+; -1.616 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[14]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.190      ;
+; -1.562 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[34]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.244      ;
+; -1.512 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.294      ;
+; -1.491 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[31]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.815      ;
+; -1.454 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[7]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.852      ;
+; -1.454 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[15]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.852      ;
+; -1.451 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[3]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.855      ;
+; -1.401 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.405      ;
+; -1.381 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[2]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 4.925      ;
+; -1.292 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[4]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.014      ;
+; -1.290 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.516      ;
+; -1.217 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[5]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.089      ;
+; -1.211 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[46]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.595      ;
+; -1.179 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.627      ;
+; -1.138 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[47]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.668      ;
+; -1.125 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.181      ;
+; -1.065 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[16]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.241      ;
+; -1.052 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.254      ;
+; -0.991 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[31]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.815      ;
+; -0.954 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[7]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.852      ;
+; -0.954 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[15]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.852      ;
+; -0.951 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[3]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.855      ;
+; -0.888 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[6]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.418      ;
+; -0.883 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[38]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.423      ;
+; -0.881 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[2]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 4.925      ;
+; -0.866 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[18]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.440      ;
+; -0.848 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.458      ;
+; -0.792 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[4]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.014      ;
+; -0.784 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[32]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.522      ;
+; -0.717 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[5]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.089      ;
+; -0.637 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.669      ;
+; -0.625 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.181      ;
+; -0.594 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[1]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.712      ;
+; -0.587 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.719      ;
+; -0.565 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[16]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.241      ;
+; -0.552 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.254      ;
+; -0.496 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[30]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.810      ;
+; -0.388 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[6]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.418      ;
+; -0.383 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[38]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.423      ;
+; -0.366 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[18]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.440      ;
+; -0.348 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.458      ;
+; -0.347 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[36]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.959      ;
+; -0.318 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.988      ;
+; -0.314 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 5.992      ;
+; -0.303 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 6.003      ;
+; -0.284 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[32]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.522      ;
+; -0.266 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[0]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 6.040      ;
+; -0.163 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[33]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; 0.000        ; 5.709      ; 6.143      ;
+; -0.137 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.669      ;
+; -0.094 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[1]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.712      ;
+; -0.087 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.719      ;
+; 0.004  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[30]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.810      ;
+; 0.153  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[36]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.959      ;
+; 0.182  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.988      ;
+; 0.186  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 5.992      ;
+; 0.197  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 6.003      ;
+; 0.234  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[0]~reg0  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 6.040      ;
+; 0.337  ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|reg_dacs[33]~reg0 ; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck ; -0.500       ; 5.709      ; 6.143      ;
+; 1.404  ; spi_slave:IC2|rx_buf[5]         ; spi_slave:IC2|rx_buf[6]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 1.625      ;
+; 1.415  ; spi_slave:IC2|rx_buf[2]         ; spi_slave:IC2|rx_buf[3]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 1.636      ;
+; 1.659  ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave:IC2|rx_bit_counter[5] ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 1.880      ;
+; 1.765  ; spi_slave:IC2|rx_buf[3]         ; spi_slave:IC2|rx_buf[4]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 1.986      ;
+; 1.789  ; spi_slave:IC2|rx_buf[1]         ; spi_slave:IC2|rx_buf[2]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.010      ;
+; 1.816  ; spi_slave:IC2|rx_buf[6]         ; spi_slave:IC2|rx_buf[7]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.037      ;
+; 1.846  ; spi_slave:IC2|rx_buf[4]         ; spi_slave:IC2|rx_buf[5]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.067      ;
+; 1.925  ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave:IC2|reg_dacs[19]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.146      ;
+; 1.928  ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave:IC2|reg_dacs[17]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.149      ;
+; 1.936  ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave:IC2|reg_dacs[21]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.157      ;
+; 2.129  ; spi_slave:IC2|reg_dacs[5]~reg0  ; spi_slave:IC2|reg_dacs[5]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.350      ;
+; 2.152  ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave:IC2|rx_bit_counter[3] ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.373      ;
+; 2.240  ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave:IC2|rx_bit_counter[4] ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.461      ;
+; 2.259  ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave:IC2|rx_bit_counter[1] ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.480      ;
+; 2.272  ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave:IC2|rx_bit_counter[2] ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.493      ;
+; 2.315  ; spi_slave:IC2|reg_dacs[3]~reg0  ; spi_slave:IC2|reg_dacs[3]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.536      ;
+; 2.324  ; spi_slave:IC2|reg_dacs[34]~reg0 ; spi_slave:IC2|reg_dacs[34]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.545      ;
+; 2.325  ; spi_slave:IC2|reg_dacs[4]~reg0  ; spi_slave:IC2|reg_dacs[4]~reg0  ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.546      ;
+; 2.332  ; spi_slave:IC2|reg_dacs[35]~reg0 ; spi_slave:IC2|reg_dacs[35]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.553      ;
+; 2.349  ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave:IC2|reg_dacs[20]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.570      ;
+; 2.356  ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave:IC2|reg_dacs[22]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.577      ;
+; 2.365  ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave:IC2|reg_dacs[37]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.586      ;
+; 2.403  ; spi_slave:IC2|rx_buf[0]         ; spi_slave:IC2|rx_buf[1]         ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.624      ;
+; 2.515  ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave:IC2|reg_dacs[23]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.736      ;
+; 2.519  ; spi_slave:IC2|reg_dacs[14]~reg0 ; spi_slave:IC2|reg_dacs[14]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.740      ;
+; 2.535  ; spi_slave:IC2|reg_dacs[47]~reg0 ; spi_slave:IC2|reg_dacs[47]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.756      ;
+; 2.536  ; spi_slave:IC2|reg_dacs[15]~reg0 ; spi_slave:IC2|reg_dacs[15]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.757      ;
+; 2.539  ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave:IC2|reg_dacs[39]~reg0 ; spi_slave_sck                   ; spi_slave_sck ; 0.000        ; 0.000      ; 2.760      ;
++--------+---------------------------------+---------------------------------+---------------------------------+---------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'load_dacs'                                                                                                             ;
++-------+---------------------------------+--------------+---------------+-------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node      ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+--------------+---------------+-------------+--------------+------------+------------+
+; 0.591 ; spi_slave:IC2|reg_dacs[23]~reg0 ; dac1[0]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.598      ;
+; 0.591 ; spi_slave:IC2|reg_dacs[22]~reg0 ; dac1[1]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.598      ;
+; 0.594 ; spi_slave:IC2|reg_dacs[35]~reg0 ; dac2[4]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.601      ;
+; 0.599 ; spi_slave:IC2|reg_dacs[6]~reg0  ; dac0[1]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.606      ;
+; 0.600 ; spi_slave:IC2|reg_dacs[16]~reg0 ; dac1[7]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.607      ;
+; 0.600 ; spi_slave:IC2|reg_dacs[39]~reg0 ; dac2[0]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.607      ;
+; 0.600 ; spi_slave:IC2|reg_dacs[33]~reg0 ; dac2[6]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.607      ;
+; 0.601 ; spi_slave:IC2|reg_dacs[3]~reg0  ; dac0[4]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.608      ;
+; 0.603 ; spi_slave:IC2|reg_dacs[15]~reg0 ; dac0[8]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.610      ;
+; 0.603 ; spi_slave:IC2|reg_dacs[14]~reg0 ; dac0[9]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.610      ;
+; 0.603 ; spi_slave:IC2|reg_dacs[38]~reg0 ; dac2[1]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.610      ;
+; 0.604 ; spi_slave:IC2|reg_dacs[20]~reg0 ; dac1[3]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.611      ;
+; 0.604 ; spi_slave:IC2|reg_dacs[18]~reg0 ; dac1[5]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.611      ;
+; 0.605 ; spi_slave:IC2|reg_dacs[37]~reg0 ; dac2[2]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.612      ;
+; 0.605 ; spi_slave:IC2|reg_dacs[47]~reg0 ; dac2[8]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.612      ;
+; 0.606 ; spi_slave:IC2|reg_dacs[7]~reg0  ; dac0[0]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.613      ;
+; 0.606 ; spi_slave:IC2|reg_dacs[31]~reg0 ; dac1[8]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.613      ;
+; 0.608 ; spi_slave:IC2|reg_dacs[36]~reg0 ; dac2[3]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.615      ;
+; 0.609 ; spi_slave:IC2|reg_dacs[34]~reg0 ; dac2[5]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.616      ;
+; 0.610 ; spi_slave:IC2|reg_dacs[5]~reg0  ; dac0[2]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.617      ;
+; 0.610 ; spi_slave:IC2|reg_dacs[0]~reg0  ; dac0[7]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.617      ;
+; 0.611 ; spi_slave:IC2|reg_dacs[32]~reg0 ; dac2[7]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.618      ;
+; 0.612 ; spi_slave:IC2|reg_dacs[1]~reg0  ; dac0[6]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.619      ;
+; 0.615 ; spi_slave:IC2|reg_dacs[4]~reg0  ; dac0[3]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.622      ;
+; 0.615 ; spi_slave:IC2|reg_dacs[2]~reg0  ; dac0[5]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.622      ;
+; 0.619 ; spi_slave:IC2|reg_dacs[30]~reg0 ; dac1[9]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.626      ;
+; 0.623 ; spi_slave:IC2|reg_dacs[17]~reg0 ; dac1[6]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.630      ;
+; 0.625 ; spi_slave:IC2|reg_dacs[46]~reg0 ; dac2[9]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.632      ;
+; 0.627 ; spi_slave:IC2|reg_dacs[19]~reg0 ; dac1[4]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.634      ;
+; 0.630 ; spi_slave:IC2|reg_dacs[21]~reg0 ; dac1[2]~reg0 ; spi_slave_sck ; load_dacs   ; 0.000        ; 0.786      ; 1.637      ;
++-------+---------------------------------+--------------+---------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'sys_clk0'                                                                                                                                    ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.652 ; WheelDecoder:IC1|shiftA[3]        ; WheelDecoder:IC1|voteA_d          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 1.873      ;
+; 1.667 ; WheelDecoder:IC1|shiftB[2]        ; WheelDecoder:IC1|voteB_d          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 1.888      ;
+; 1.914 ; WheelDecoder:IC1|shiftB[0]        ; WheelDecoder:IC1|shiftB[1]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.135      ;
+; 1.919 ; WheelDecoder:IC1|shiftA[0]        ; WheelDecoder:IC1|shiftA[1]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.140      ;
+; 1.920 ; WheelDecoder:IC1|shiftA[1]        ; WheelDecoder:IC1|shiftA[2]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.141      ;
+; 1.924 ; WheelDecoder:IC1|shiftA[1]        ; WheelDecoder:IC1|voteA_d          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.145      ;
+; 1.932 ; WheelDecoder:IC1|shiftA[2]        ; WheelDecoder:IC1|shiftA[3]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.153      ;
+; 2.116 ; WheelDecoder:IC1|counter[6]       ; WheelDecoder:IC1|counter[6]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; WheelDecoder:IC1|counter[13]      ; WheelDecoder:IC1|counter[13]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.126 ; WheelDecoder:IC1|counter[15]      ; WheelDecoder:IC1|counter[15]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[7]       ; WheelDecoder:IC1|counter[7]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[8]       ; WheelDecoder:IC1|counter[8]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[28]      ; WheelDecoder:IC1|counter[28]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[18]      ; WheelDecoder:IC1|counter[18]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[26]      ; WheelDecoder:IC1|counter[26]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[25]      ; WheelDecoder:IC1|counter[25]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; WheelDecoder:IC1|counter[17]      ; WheelDecoder:IC1|counter[17]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.134 ; WheelDecoder:IC1|counter[27]      ; WheelDecoder:IC1|counter[27]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.355      ;
+; 2.153 ; WheelDecoder:IC1|counter[5]       ; WheelDecoder:IC1|counter[5]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.374      ;
+; 2.187 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[4]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.408      ;
+; 2.189 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[3]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.410      ;
+; 2.190 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[2]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.411      ;
+; 2.190 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[1]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.411      ;
+; 2.213 ; WheelDecoder:IC1|counter[30]      ; WheelDecoder:IC1|counter[30]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.434      ;
+; 2.221 ; WheelDecoder:IC1|counter[9]       ; WheelDecoder:IC1|counter[9]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; WheelDecoder:IC1|counter[14]      ; WheelDecoder:IC1|counter[14]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; WheelDecoder:IC1|counter[19]      ; WheelDecoder:IC1|counter[19]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; WheelDecoder:IC1|counter[24]      ; WheelDecoder:IC1|counter[24]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230 ; WheelDecoder:IC1|counter[11]      ; WheelDecoder:IC1|counter[11]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; WheelDecoder:IC1|counter[29]      ; WheelDecoder:IC1|counter[29]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; WheelDecoder:IC1|counter[21]      ; WheelDecoder:IC1|counter[21]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; WheelDecoder:IC1|counter[12]      ; WheelDecoder:IC1|counter[12]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; WheelDecoder:IC1|counter[10]      ; WheelDecoder:IC1|counter[10]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; WheelDecoder:IC1|counter[20]      ; WheelDecoder:IC1|counter[20]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; WheelDecoder:IC1|counter[22]      ; WheelDecoder:IC1|counter[22]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.236 ; WheelDecoder:IC1|shiftB[2]        ; WheelDecoder:IC1|shiftB[3]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.457      ;
+; 2.241 ; WheelDecoder:IC1|counter[4]       ; WheelDecoder:IC1|counter[4]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.462      ;
+; 2.248 ; WheelDecoder:IC1|shiftA[2]        ; WheelDecoder:IC1|voteA_d          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.469      ;
+; 2.249 ; WheelDecoder:IC1|counter[1]       ; WheelDecoder:IC1|counter[1]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.470      ;
+; 2.261 ; WheelDecoder:IC1|counter[2]       ; WheelDecoder:IC1|counter[2]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.482      ;
+; 2.261 ; WheelDecoder:IC1|counter[0]       ; WheelDecoder:IC1|counter[0]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.482      ;
+; 2.272 ; WheelDecoder:IC1|shiftB[3]        ; WheelDecoder:IC1|voteB_d          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.493      ;
+; 2.340 ; WheelDecoder:IC1|voteB_d          ; WheelDecoder:IC1|rotLeft          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.561      ;
+; 2.505 ; WheelDecoder:IC1|counter[31]      ; WheelDecoder:IC1|counter[31]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.726      ;
+; 2.508 ; WheelDecoder:IC1|shiftB[1]        ; WheelDecoder:IC1|voteB_d          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.729      ;
+; 2.582 ; WheelDecoder:IC1|\Shifter:counter ; WheelDecoder:IC1|\Shifter:counter ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.803      ;
+; 2.635 ; WheelDecoder:IC1|counter[3]       ; WheelDecoder:IC1|counter[3]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.856      ;
+; 2.635 ; WheelDecoder:IC1|counter[23]      ; WheelDecoder:IC1|counter[23]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 2.856      ;
+; 2.780 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[7]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.001      ;
+; 2.781 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[6]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.002      ;
+; 2.782 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[8]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.003      ;
+; 2.789 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[15]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.010      ;
+; 2.791 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[13]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.012      ;
+; 2.848 ; WheelDecoder:IC1|voteA_d          ; WheelDecoder:IC1|rotLeft          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.069      ;
+; 2.948 ; WheelDecoder:IC1|counter[6]       ; WheelDecoder:IC1|counter[7]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949 ; WheelDecoder:IC1|counter[13]      ; WheelDecoder:IC1|counter[14]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.958 ; WheelDecoder:IC1|counter[8]       ; WheelDecoder:IC1|counter[9]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; WheelDecoder:IC1|counter[7]       ; WheelDecoder:IC1|counter[8]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; WheelDecoder:IC1|counter[28]      ; WheelDecoder:IC1|counter[29]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; WheelDecoder:IC1|counter[26]      ; WheelDecoder:IC1|counter[27]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; WheelDecoder:IC1|counter[17]      ; WheelDecoder:IC1|counter[18]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; WheelDecoder:IC1|counter[18]      ; WheelDecoder:IC1|counter[19]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.179      ;
+; 2.966 ; WheelDecoder:IC1|counter[27]      ; WheelDecoder:IC1|counter[28]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.187      ;
+; 2.990 ; WheelDecoder:IC1|shiftB[1]        ; WheelDecoder:IC1|shiftB[2]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.211      ;
+; 3.019 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[5]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.240      ;
+; 3.040 ; WheelDecoder:IC1|shiftB[2]        ; WheelDecoder:IC1|rotRight         ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.261      ;
+; 3.059 ; WheelDecoder:IC1|counter[6]       ; WheelDecoder:IC1|counter[8]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060 ; WheelDecoder:IC1|counter[13]      ; WheelDecoder:IC1|counter[15]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069 ; WheelDecoder:IC1|counter[8]       ; WheelDecoder:IC1|counter[10]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; WheelDecoder:IC1|counter[18]      ; WheelDecoder:IC1|counter[20]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; WheelDecoder:IC1|counter[28]      ; WheelDecoder:IC1|counter[30]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; WheelDecoder:IC1|counter[7]       ; WheelDecoder:IC1|counter[9]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; WheelDecoder:IC1|counter[17]      ; WheelDecoder:IC1|counter[19]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; WheelDecoder:IC1|counter[26]      ; WheelDecoder:IC1|counter[28]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.290      ;
+; 3.077 ; WheelDecoder:IC1|counter[27]      ; WheelDecoder:IC1|counter[29]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.298      ;
+; 3.080 ; WheelDecoder:IC1|voteB_d          ; WheelDecoder:IC1|rotRight         ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.301      ;
+; 3.129 ; WheelDecoder:IC1|counter[16]      ; WheelDecoder:IC1|counter[16]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.350      ;
+; 3.158 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[30]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.379      ;
+; 3.159 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[29]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.380      ;
+; 3.159 ; WheelDecoder:IC1|shiftB[2]        ; WheelDecoder:IC1|rotLeft          ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.380      ;
+; 3.161 ; WheelDecoder:IC1|counter[24]      ; WheelDecoder:IC1|counter[25]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; WheelDecoder:IC1|counter[14]      ; WheelDecoder:IC1|counter[15]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; WheelDecoder:IC1|counter[9]       ; WheelDecoder:IC1|counter[10]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; WheelDecoder:IC1|counter[19]      ; WheelDecoder:IC1|counter[20]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.165 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[31]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.386      ;
+; 3.170 ; WheelDecoder:IC1|counter[11]      ; WheelDecoder:IC1|counter[12]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; WheelDecoder:IC1|counter[21]      ; WheelDecoder:IC1|counter[22]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; WheelDecoder:IC1|counter[29]      ; WheelDecoder:IC1|counter[30]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; WheelDecoder:IC1|counter[6]       ; WheelDecoder:IC1|counter[9]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; WheelDecoder:IC1|counter[12]      ; WheelDecoder:IC1|counter[13]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; WheelDecoder:IC1|counter[22]      ; WheelDecoder:IC1|counter[23]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.392      ;
+; 3.180 ; WheelDecoder:IC1|counter[7]       ; WheelDecoder:IC1|counter[10]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.401      ;
+; 3.180 ; WheelDecoder:IC1|counter[17]      ; WheelDecoder:IC1|counter[20]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.401      ;
+; 3.180 ; WheelDecoder:IC1|counter[26]      ; WheelDecoder:IC1|counter[29]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.401      ;
+; 3.181 ; WheelDecoder:IC1|counter[4]       ; WheelDecoder:IC1|counter[5]       ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.402      ;
+; 3.185 ; WheelDecoder:IC1|\Shifter:counter ; WheelDecoder:IC1|shiftA[1]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.406      ;
+; 3.185 ; WheelDecoder:IC1|\Shifter:counter ; WheelDecoder:IC1|shiftA[3]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.406      ;
+; 3.185 ; WheelDecoder:IC1|\Shifter:counter ; WheelDecoder:IC1|shiftA[2]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.406      ;
+; 3.185 ; WheelDecoder:IC1|\Shifter:counter ; WheelDecoder:IC1|shiftA[0]        ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.406      ;
+; 3.187 ; WheelDecoder:IC1|rotRight         ; WheelDecoder:IC1|counter[10]      ; sys_clk0     ; sys_clk0    ; 0.000        ; 0.000      ; 3.408      ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                               ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; spi_slave_sck                   ; load_dacs                       ; 30       ; 0        ; 0        ; 0        ;
+; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; 0        ; 0        ; 7        ; 7        ;
+; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0        ; 0        ; 33       ; 0        ;
+; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0        ; 0        ; 32       ; 0        ;
+; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck                   ; 52       ; 64       ; 0        ; 0        ;
+; spi_slave_sck                   ; spi_slave_sck                   ; 260      ; 0        ; 0        ; 0        ;
+; sys_clk0                        ; sys_clk0                        ; 1893     ; 0        ; 0        ; 0        ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; From Clock                      ; To Clock                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+; spi_slave_sck                   ; load_dacs                       ; 30       ; 0        ; 0        ; 0        ;
+; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; 0        ; 0        ; 7        ; 7        ;
+; spi_slave_sck                   ; spi_slave:IC2|rx_bit_counter[0] ; 0        ; 0        ; 33       ; 0        ;
+; sys_clk0                        ; spi_slave:IC2|rx_bit_counter[0] ; 0        ; 0        ; 32       ; 0        ;
+; spi_slave:IC2|rx_bit_counter[0] ; spi_slave_sck                   ; 52       ; 64       ; 0        ; 0        ;
+; spi_slave_sck                   ; spi_slave_sck                   ; 260      ; 0        ; 0        ; 0        ;
+; sys_clk0                        ; sys_clk0                        ; 1893     ; 0        ; 0        ; 0        ;
++---------------------------------+---------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 8     ; 8    ;
+; Unconstrained Input Port Paths  ; 139   ; 139  ;
+; Unconstrained Output Ports      ; 34    ; 34   ;
+; Unconstrained Output Port Paths ; 35    ; 35   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                   ;
++---------------------------------+---------------------------------+------+-------------+
+; Target                          ; Clock                           ; Type ; Status      ;
++---------------------------------+---------------------------------+------+-------------+
+; load_dacs                       ; load_dacs                       ; Base ; Constrained ;
+; spi_slave:IC2|rx_bit_counter[0] ; spi_slave:IC2|rx_bit_counter[0] ; Base ; Constrained ;
+; spi_slave_sck                   ; spi_slave_sck                   ; Base ; Constrained ;
+; sys_clk0                        ; sys_clk0                        ; Base ; Constrained ;
++---------------------------------+---------------------------------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                ;
++-------------------+--------------------------------------------------------------------------------------+
+; Input Port        ; Comment                                                                              ;
++-------------------+--------------------------------------------------------------------------------------+
+; encoder1_a        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_b        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_reset_in ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_u_in     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_v_in     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_w_in     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_slave_mosi    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_slave_ss      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+--------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                             ;
++----------------+---------------------------------------------------------------------------------------+
+; Output Port    ; Comment                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; dac0[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[8]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[9]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[8]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[9]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[8]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[9]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_u_out ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_v_out ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_w_out ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_slave_miso ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                                ;
++-------------------+--------------------------------------------------------------------------------------+
+; Input Port        ; Comment                                                                              ;
++-------------------+--------------------------------------------------------------------------------------+
+; encoder1_a        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_b        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_reset_in ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_u_in     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_v_in     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_w_in     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_slave_mosi    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_slave_ss      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------------+--------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                             ;
++----------------+---------------------------------------------------------------------------------------+
+; Output Port    ; Comment                                                                               ;
++----------------+---------------------------------------------------------------------------------------+
+; dac0[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[8]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac0[9]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[8]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac1[9]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[0]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[1]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[2]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[3]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[4]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[5]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[6]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[7]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[8]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; dac2[9]        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_u_out ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_v_out ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; encoder1_w_out ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_slave_miso ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++----------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Wed Jul 06 12:49:33 2016
+Info: Command: quartus_sta main -c main
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 10 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'main.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name load_dacs load_dacs
+    Info (332105): create_clock -period 1.000 -name spi_slave_sck spi_slave_sck
+    Info (332105): create_clock -period 1.000 -name spi_slave:IC2|rx_bit_counter[0] spi_slave:IC2|rx_bit_counter[0]
+    Info (332105): create_clock -period 1.000 -name sys_clk0 sys_clk0
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.469
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.469            -215.378 spi_slave_sck 
+    Info (332119):    -5.788            -198.719 sys_clk0 
+    Info (332119):    -5.438              -7.156 spi_slave:IC2|rx_bit_counter[0] 
+    Info (332119):    -0.184              -4.849 load_dacs 
+Info (332146): Worst-case hold slack is -8.852
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -8.852              -8.852 spi_slave:IC2|rx_bit_counter[0] 
+    Info (332119):    -3.293             -44.519 spi_slave_sck 
+    Info (332119):     0.591               0.000 load_dacs 
+    Info (332119):     1.652               0.000 sys_clk0 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 load_dacs 
+    Info (332119):    -2.289              -2.289 spi_slave_sck 
+    Info (332119):    -2.289              -2.289 sys_clk0 
+    Info (332119):     0.463               0.000 spi_slave:IC2|rx_bit_counter[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 719 megabytes
+    Info: Processing ended: Wed Jul 06 12:49:34 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

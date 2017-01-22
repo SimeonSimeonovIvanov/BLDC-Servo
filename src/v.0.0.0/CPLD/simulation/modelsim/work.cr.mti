@@ -1,0 +1,28 @@
+{E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/WheelDecoder.vhdl} {1 {vcom -work work -2002 -explicit {E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/WheelDecoder.vhdl}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity WheelDecoder
+-- Compiling architecture Arch of WheelDecoder
+
+} {} {}} {E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI/test00/spi_slave_tb.vhd} {1 {vcom -work work -2002 -explicit {E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI/test00/spi_slave_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity spi_slave_tb
+-- Compiling architecture behv of spi_slave_tb
+
+} {} {}} {E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/spi_slave.vhd} {1 {vcom -work work -2002 -explicit {E:/Developments/Elektronika/Programiruemi Logiki/Projects/SPI and ENCODER/test_00/spi_slave.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity spi_slave
+-- Compiling architecture behv of spi_slave
+
+} {} {}}
