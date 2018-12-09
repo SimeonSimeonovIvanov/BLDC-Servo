@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Wed Jul 06 12:49:28 2016
+Tue Sep 25 22:46:19 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -46,7 +46,7 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Jul 06 12:49:28 2016       ;
+; Analysis & Synthesis Status ; Successful - Tue Sep 25 22:46:19 2018       ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; main                                        ;
 ; Top-level Entity Name       ; main                                        ;
@@ -141,15 +141,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                       ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------+---------+
-; main.vhd                         ; yes             ; User VHDL File  ; D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd          ;         ;
-; spi_slave.vhd                    ; yes             ; User VHDL File  ; D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd     ;         ;
-; WheelDecoder.vhdl                ; yes             ; User VHDL File  ; D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; main.vhd                         ; yes             ; User VHDL File  ; D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd          ;         ;
+; spi_slave.vhd                    ; yes             ; User VHDL File  ; D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd     ;         ;
+; WheelDecoder.vhdl                ; yes             ; User VHDL File  ; D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -283,62 +283,62 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Jul 06 12:49:17 2016
+    Info: Processing started: Tue Sep 25 22:46:09 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file main.vhd
-    Info (12022): Found design unit 1: main-behv File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 35
-    Info (12023): Found entity 1: main File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 4
+    Info (12022): Found design unit 1: main-behv File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 35
+    Info (12023): Found entity 1: main File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file spi_slave.vhd
-    Info (12022): Found design unit 1: spi_slave-behv File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 24
-    Info (12023): Found entity 1: spi_slave File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 5
+    Info (12022): Found design unit 1: spi_slave-behv File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 24
+    Info (12023): Found entity 1: spi_slave File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file wheeldecoder.vhdl
-    Info (12022): Found design unit 1: WheelDecoder-Arch File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl Line: 21
-    Info (12023): Found entity 1: WheelDecoder File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl Line: 6
+    Info (12022): Found design unit 1: WheelDecoder-Arch File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl Line: 21
+    Info (12023): Found entity 1: WheelDecoder File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/WheelDecoder.vhdl Line: 6
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at main.vhd(8): used implicit default value for signal "led1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 8
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(77): object "temp" assigned a value but never read File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 77
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(81): object "hall_new" assigned a value but never read File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 81
-Info (12128): Elaborating entity "WheelDecoder" for hierarchy "WheelDecoder:IC1" File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 93
-Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:IC2" File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 104
-Warning (10541): VHDL Signal Declaration warning at spi_slave.vhd(18): used implicit default value for signal "led1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 18
-Warning (10036): Verilog HDL or VHDL warning at spi_slave.vhd(30): object "wr_encoder" assigned a value but never read File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 30
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(58): signal "rx_bit_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(58): signal "rx_bit_counter_up_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(59): signal "rx_buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(64): signal "rx_buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 64
-Warning (10631): VHDL Process Statement warning at spi_slave.vhd(33): inferring latch(es) for signal or variable "rx_bit_counter_up_value", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Warning (10631): VHDL Process Statement warning at spi_slave.vhd(33): inferring latch(es) for signal or variable "rd_encoder", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Warning (10631): VHDL Process Statement warning at spi_slave.vhd(33): inferring latch(es) for signal or variable "wr_dacs", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(78): signal "rx_bit_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 78
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(78): signal "rx_bit_counter_up_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 78
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(80): signal "reg_encoder1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at spi_slave.vhd(80): signal "rx_bit_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 80
-Warning (10631): VHDL Process Statement warning at spi_slave.vhd(73): inferring latch(es) for signal or variable "miso", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
-Info (10041): Inferred latch for "miso" at spi_slave.vhd(73) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
-Info (10041): Inferred latch for "wr_dacs" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rd_encoder" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rx_bit_counter_up_value[0]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rx_bit_counter_up_value[1]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rx_bit_counter_up_value[2]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rx_bit_counter_up_value[3]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rx_bit_counter_up_value[4]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-Info (10041): Inferred latch for "rx_bit_counter_up_value[5]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Warning (10541): VHDL Signal Declaration warning at main.vhd(8): used implicit default value for signal "led1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 8
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(77): object "temp" assigned a value but never read File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 77
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(81): object "hall_new" assigned a value but never read File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 81
+Info (12128): Elaborating entity "WheelDecoder" for hierarchy "WheelDecoder:IC1" File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 94
+Info (12128): Elaborating entity "spi_slave" for hierarchy "spi_slave:IC2" File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 105
+Warning (10541): VHDL Signal Declaration warning at spi_slave.vhd(18): used implicit default value for signal "led1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 18
+Warning (10036): Verilog HDL or VHDL warning at spi_slave.vhd(30): object "wr_encoder" assigned a value but never read File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(58): signal "rx_bit_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(58): signal "rx_bit_counter_up_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(59): signal "rx_buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(64): signal "rx_buf" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 64
+Warning (10631): VHDL Process Statement warning at spi_slave.vhd(33): inferring latch(es) for signal or variable "rx_bit_counter_up_value", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at spi_slave.vhd(33): inferring latch(es) for signal or variable "rd_encoder", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at spi_slave.vhd(33): inferring latch(es) for signal or variable "wr_dacs", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(78): signal "rx_bit_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(78): signal "rx_bit_counter_up_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(80): signal "reg_encoder1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at spi_slave.vhd(80): signal "rx_bit_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 80
+Warning (10631): VHDL Process Statement warning at spi_slave.vhd(73): inferring latch(es) for signal or variable "miso", which holds its previous value in one or more paths through the process File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
+Info (10041): Inferred latch for "miso" at spi_slave.vhd(73) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
+Info (10041): Inferred latch for "wr_dacs" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rd_encoder" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rx_bit_counter_up_value[0]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rx_bit_counter_up_value[1]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rx_bit_counter_up_value[2]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rx_bit_counter_up_value[3]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rx_bit_counter_up_value[4]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (10041): Inferred latch for "rx_bit_counter_up_value[5]" at spi_slave.vhd(33) File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch spi_slave:IC2|rx_bit_counter_up_value[4] has unsafe behavior File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_slave:IC2|rx_buf[0] File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 46
+Warning (13012): Latch spi_slave:IC2|rx_bit_counter_up_value[4] has unsafe behavior File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal spi_slave:IC2|rx_buf[0] File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 46
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led1" is stuck at GND File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 8
+    Warning (13410): Pin "led1" is stuck at GND File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 8
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "encoder1_z" File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 17
+    Warning (15610): No output dependent on input pin "encoder1_z" File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 17
 Info (21057): Implemented 258 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 35 output pins
     Info (21061): Implemented 211 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 820 megabytes
-    Info: Processing ended: Wed Jul 06 12:49:28 2016
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 821 megabytes
+    Info: Processing ended: Tue Sep 25 22:46:19 2018
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:21
 
 

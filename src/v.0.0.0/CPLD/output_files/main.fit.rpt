@@ -1,5 +1,5 @@
 Fitter report for main
-Wed Jul 06 12:49:31 2016
+Tue Sep 25 22:46:21 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -58,7 +58,7 @@ agreement for further details.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +-----------------------+---------------------------------------------+
-; Fitter Status         ; Successful - Wed Jul 06 12:49:31 2016       ;
+; Fitter Status         ; Successful - Tue Sep 25 22:46:21 2018       ;
 ; Quartus Prime Version ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name         ; main                                        ;
 ; Top-level Entity Name ; main                                        ;
@@ -136,7 +136,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/output_files/main.pin.
+The pin-out file can be found in D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/output_files/main.pin.
 
 
 +---------------------------------------------------------------------+
@@ -670,24 +670,24 @@ Info (332111): Found 4 clocks
     Info (332111):    1.000 spi_slave_sck
     Info (332111):    1.000     sys_clk0
 Info (186079): Completed User Assigned Global Signals Promotion Operation
-Info (186215): Automatically promoted signal "sys_clk0" to use Global clock in PIN 12 File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 7
-Info (186215): Automatically promoted signal "spi_slave_sck" to use Global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 11
-Info (186228): Pin "spi_slave_sck" drives global clock, but is not placed in a dedicated clock pin position File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 11
-Info (186215): Automatically promoted signal "load_dacs" to use Global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 28
-Info (186228): Pin "load_dacs" drives global clock, but is not placed in a dedicated clock pin position File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 28
-Info (186216): Automatically promoted some destinations of signal "spi_slave_ss" to use Global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 10
-    Info (186217): Destination "spi_slave:IC2|reg_dacs[32]~4" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 46
-    Info (186217): Destination "spi_slave:IC2|reg_dacs[46]~20" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 46
-    Info (186217): Destination "spi_slave:IC2|miso$latch" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
-    Info (186217): Destination "spi_slave:IC2|miso_587" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
-    Info (186217): Destination "spi_slave:IC2|rd_encoder" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 29
-    Info (186217): Destination "spi_slave:IC2|wr_dacs" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 31
-    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[1]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[0]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[2]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
-    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[3]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+Info (186215): Automatically promoted signal "sys_clk0" to use Global clock in PIN 12 File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 7
+Info (186215): Automatically promoted signal "spi_slave_sck" to use Global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 11
+Info (186228): Pin "spi_slave_sck" drives global clock, but is not placed in a dedicated clock pin position File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 11
+Info (186215): Automatically promoted signal "load_dacs" to use Global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 28
+Info (186228): Pin "load_dacs" drives global clock, but is not placed in a dedicated clock pin position File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 28
+Info (186216): Automatically promoted some destinations of signal "spi_slave_ss" to use Global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 10
+    Info (186217): Destination "spi_slave:IC2|reg_dacs[32]~4" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 46
+    Info (186217): Destination "spi_slave:IC2|reg_dacs[46]~20" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 46
+    Info (186217): Destination "spi_slave:IC2|miso$latch" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
+    Info (186217): Destination "spi_slave:IC2|miso_587" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 73
+    Info (186217): Destination "spi_slave:IC2|rd_encoder" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 29
+    Info (186217): Destination "spi_slave:IC2|wr_dacs" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 31
+    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[1]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[0]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[2]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
+    Info (186217): Destination "spi_slave:IC2|rx_bit_counter_up_value[3]" may be non-global or may not use global clock File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/spi_slave.vhd Line: 33
     Info (186218): Limited to 10 non-global destinations
-Info (186228): Pin "spi_slave_ss" drives global clock, but is not placed in a dedicated clock pin position File: D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 10
+Info (186228): Pin "spi_slave_ss" drives global clock, but is not placed in a dedicated clock pin position File: D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/main.vhd Line: 10
 Info (186079): Completed Auto Global Promotion Operation
 Info (176234): Starting register packing
 Info (186468): Started processing fast register assignments
@@ -707,20 +707,20 @@ Info (170195): Router estimated average interconnect usage is 20% of the availab
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.15 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.12 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/output_files/main.fit.smsg
+Info (144001): Generated suppressed messages file D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/output_files/main.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 997 megabytes
-    Info: Processing ended: Wed Jul 06 12:49:31 2016
+    Info: Peak virtual memory: 999 megabytes
+    Info: Processing ended: Tue Sep 25 22:46:21 2018
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in D:/Developments/Elektronika/Motor Control/Brushless DC Motors (BLDC)/BLDC Servo/src/v.0.0.0/CPLD/output_files/main.fit.smsg.
+The suppressed messages can be found in D:/Developments/Elektronika/Motor Control/Projects/BLDC Servo/src/v.0.0.0/CPLD/output_files/main.fit.smsg.
 
 
